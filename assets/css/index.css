@@ -1,0 +1,182 @@
+
+    :root {
+            --primary-blue: #0d6efd;
+            --light-blue: #e7f1ff;
+            --dark-blue: #0842a0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: white;
+            padding: 120px 0;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn-custom {
+            background-color: white;
+            color: var(--primary-blue);
+            border: 2px solid white;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+        }
+        
+        .features-section {
+            padding: 80px 0;
+            background-color: var(--light-blue);
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            height: 100%;
+            box-shadow: 0 5px 20px rgba(13, 110, 253, 0.1);
+            transition: transform 0.3s ease;
+            border: none;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-card h4 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .stats-section {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .about-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--light-blue);
+        }
+        
+        .contact-info {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(13, 110, 253, 0.1);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-right: 1rem;
+            width: 40px;
+        }
+        
+        .faq-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .accordion-button {
+            background-color: var(--light-blue);
+            color: var(--dark-blue);
+            border: none;
+            font-weight: 600;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+        
+        .footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-weight: 600;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: var(--dark-blue);
+            border-color: var(--dark-blue);
+        }
+    
