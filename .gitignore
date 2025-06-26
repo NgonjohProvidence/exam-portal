@@ -4,6 +4,7 @@
 #Cache folder
 .alcache/
 *.fpdf/
+fpdf/
 #Symbols folder
 .alpackages/
 #Snapshots folder
