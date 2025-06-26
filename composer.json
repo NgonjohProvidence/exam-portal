@@ -1,0 +1,17 @@
+{
+    "name": "ndipn/testproject",
+    "autoload": {
+        "psr-4": {
+            "Ndipn\\Testproject\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ndipnou frian claude",
+            "email": "ndipnouclaude@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^4.3"
+    }
+}
