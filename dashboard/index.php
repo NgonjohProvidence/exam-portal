@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if(isset($_SESSION['admin_id'])){
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam Portal Sidebar</title>
     <!-- Bootstrap CSS -->
+      <link rel="shortcut icon" href="../assets/img/lcon.jpg" type="image/x-icon">
     <link href="../assets/css/bootstrap5.3.css" rel="stylesheet">
        <!-- link CSS -->
     <link href="../assets/css/dashboard.css" rel="stylesheet">
@@ -1043,9 +1052,7 @@
             logoutBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 if (confirm('Are you sure you want to logout?')) {
-                    alert('Logging out...');
-                    // In a real app, you would redirect to logout URL
-                    // window.location.href = '/logout';
+                 window.location.href = '../app/logout.php';
                 }
             });
             
@@ -1079,3 +1086,10 @@
 </script>
 </body>
 </html>
+
+    <?php 
+    }else{
+        header("location:../login.php");
+    }
+    
+    ?>
