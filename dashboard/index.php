@@ -283,39 +283,44 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>Teacher ID</th>
+                                    <th>Test ID</th>
                                     <th>Name</th>
                                     <th>Subject</th>
                                     <th>Classes</th>
+                                    <th>Start Date</th>
                                     <th>submission status</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                  include "../includes/connection.php"; 
+                   $sqlmarks = "SELECT `exam_title`, `pdf_path`, `Teachers-name`, `Class`, `startdate` FROM `exams`";
+                   $qrymarks = mysqli_query($conn, $sqlmarks);
+                   $count=0;
+                   while($data= mysqli_fetch_assoc($qrymarks)){
+                    $count++;
+                       $name = $data['name'];
+                       $subject = $data['subject'];
+                       $class = $data['class'];
+                       $startdate = $data['start-date'];
+                   
+                                ?>
                                 <tr>
-                                    <td>T001</td>
-                                    <td>John Smith</td>
-                                    <td>Mathematics</td>
-                                    <td>Form 3, Form 4</td>
+                                    <td><?php echo $count ?></td>
+                                    <td><?php echo $name ?></td>
+                                    <td><?php echo $subject ?></td>
+                                    <td><?php echo $class ?></td>
+                                    <td><?php echo $startdate ?></td>
                                     <td><button class="action-btn" style="background-color: green;">submited</button>
                                         <button class="action-btn" style="background-color: red;">Pending</button></td>
                                     <td>
-                                        <button class="action-btn" style="background-color: green;">Select</button>
-                                        <button class="action-btn" style="background-color: red;">Delete</button>
+                                        <button class="action-btn" action="paper-process.php" name="delete" style="background-color: red;">Delete</button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>T001</td>
-                                    <td>John Smith</td>
-                                    <td>Mathematics</td>
-                                    <td>Form 3, Form 4</td>
-                                    <td><button class="action-btn" style="background-color: green;">submited</button>
-                                        <button class="action-btn" style="background-color: red;">Pending</button></td>
-                                    <td>
-                                        <button class="action-btn" style="background-color: green;">Select</button>
-                                        <button class="action-btn" style="background-color: red;">Delete</button>
-                                    </td>
-                                </tr>
+                                <?php
+                   }
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -339,25 +344,29 @@
         <div class="form-container">
     <!-- Registration Form -->
      
-                <form>
+                <form action="../paper-process.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="register-name">subject</label>
-                        <input type="text" id="register-name" placeholder="Enter your full name" required>
+                        <label for="name">Name</label>
+                        <input type="text" name="register-name" id="register-name" placeholder="Enter your full name" required>
                     </div>
                     <div class="form-group">
-                        <label for="register-email">class</label>
-                        <input type="email" id="register-email" placeholder="Enter your email" required>
+                        <label for="subject">Subject</label>
+                        <input type="text" name="subject" id="subject" placeholder="Enter your subject" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="register-confirm">file </label>
-                        <input type="file" id="register-confirm" placeholder="Confirm your password" required>
+                        <label for="class">Class </label>
+                        <input type="text" name="class" id="class" placeholder="Enter your class" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="start-date">Date </label>
+                        <input type="date" name="start-date" id="start-date" placeholder="Enter start Date" required>
                     </div>
                                         <div class="form-group">
-                        <label for="register-confirm">teachers name </label>
-                        <input type="password" id="register-confirm" placeholder="Confirm your password" required>
+                        <label for="file">Paper </label>
+                        <input type="file"  name="file" id="file" accept=".pdf" placeholder="Upload Paper" required>
                     </div>
-                    <button type="submit" class="btn">add</button>
+                    <button type="submit" name="add-paper" class="btn">add</button>
                 </form>
       
     </div>
@@ -368,6 +377,7 @@
     </div>
   </div>
 </div>
+<!-- Modal End -->
 
 
         <!-- Class Sections -->
