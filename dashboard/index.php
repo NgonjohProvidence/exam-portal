@@ -370,71 +370,99 @@
 </div>
 
 
-        <!-- Class Sections -->
-        <div id="form-one" class="content-section">
-            <div class="content-header">
-                <div class="row mb-4">
-    <div class="col-md-6">
-        <h1>Form One Students</h1>
-        <p class="text-muted">Manage Form One students and examinations</p>
-    </div>
-    <div class="col-md-6 text-md-end">
-        <div class="dropdown-filter">
-            <label for="classFilter" class="form-label">Filter by Class:</label>
-            <div class="input-group">
-                <select class="form-select form-select-lg" id="classFilter" aria-label="Class filter">
-                    <option value="all" selected>Classes</option>
-                    <option value="form-one-a">Form One A</option>
-                    <option value="form-one-b">Form One B</option>
-                    <option value="form-one-c">Form One C</option>
-                    <option value="form-one-d">Form One D</option>
-                    <option value="form-one-e">Form One E</option>
-                </select>
-                <a  class="btn btn-primary" type="button"  href="#">
-                    <i class="bi bi-funnel"></i> Apply
-                </a>
+<!-- Class Sections -->
+<div id="form-one" class="content-section">
+    <div class="content-header">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h1>Form One Students</h1>
+                <p class="text-muted">Manage Form One students and examinations</p>
             </div>
-        </div>
-    </div>
-</div>
-            </div>
-            <div class="table-container">
-                <div class="table-header">
-                    <h3>Form One Students</h3>
-                </div>
-                <div class="table-content">
-                    <button class="add-btn">Upload list</button>
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Student ID</th>
-                                    <th>Name</th>
-                                    <th>Age</th>
-                                    <th>Gender</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>F1-001</td>
-                                    <td>Alice Brown</td>
-                                    <td>14</td>
-                                    <td>Female</td>
-                                    <td>Active</td>
-                                    <td>
-                                        <button class="action-btn">Edit</button>
-                                        <button class="action-btn" style="background-color: red;">Delete</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <div class="col-md-6 text-md-end">
+                <div class="dropdown-filter">
+                    <label for="classFilter" class="form-label">Filter by Class:</label>
+                    <div class="input-group">
+                        <select class="form-select form-select-lg" id="classFilter" aria-label="Class filter">
+                            <option value="all" selected>Classes</option>
+                            <option value="form-one-a">Form One A</option>
+                            <option value="form-one-b">Form One B</option>
+                            <option value="form-one-c">Form One C</option>
+                            <option value="form-one-d">Form One D</option>
+                            <option value="form-one-e">Form One E</option>
+                        </select>
+                        <a class="btn btn-primary" type="button" href="#">
+                            <i class="bi bi-funnel"></i> Apply
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="table-container">
+        <div class="table-header">
+            <h3>Form One Students</h3>
+        </div>
+        <div class="table-content">
+            <button class="add-btn" data-bs-toggle="modal" data-bs-target="#uploadModal">Upload list</button>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>F1-001</td>
+                            <td>Alice Brown</td>
+                            <td>14</td>
+                            <td>Female</td>
+                            <td>Active</td>
+                            <td>
+                                <button class="action-btn">Edit</button>
+                                <button class="action-btn" style="background-color: red;">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Upload Modal -->
+<div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="uploadModalLabel">Upload Student List</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="processsheet.php" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="import_file" class="form-label">Select File</label>
+                        <input class="form-control" type="file" id="import_file" name="import_file" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" name="excel_data">Upload List</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+       
+       
+        <!-- Form starts here -->
         <div id="form-two" class="content-section">
           <div class="content-header">
                 <div class="row mb-4">

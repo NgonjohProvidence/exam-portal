@@ -5,6 +5,8 @@
 .alcache/
 *.fpdf/
 fpdf/
+fpdf186/
+vendor
 #Symbols folder
 .alpackages/
 #Snapshots folder
