@@ -7,6 +7,7 @@
     
     <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="assets\css\bootstrap5.3.css">
+     <link rel="shortcut icon" href="assets/img/lcon.jpg" type="image/x-icon">
      <!-- link CSS -->
     <link href="assets/css/index.css" rel="stylesheet">
                 
